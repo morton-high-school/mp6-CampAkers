@@ -3,8 +3,8 @@ public class LinkedListAutograder{
     nodeTests();
     linkedListTests();
     linkedListUtilTests();
-    stackTests();
-    queueTests();
+     stackTests();
+     queueTests();
   }
 
   public static void nodeTests(){
@@ -35,6 +35,7 @@ public class LinkedListAutograder{
     Node a2 = a1.getFront();
     boolean t1 = a2==null;
     boolean t2 = a1.toString().equals("There are no items in this list.");
+ 
 
     Node a3 = new Node(3);
     Node a4 = new Node(4);
@@ -45,16 +46,22 @@ public class LinkedListAutograder{
     a1.append(a3);
     boolean t3 = a1.toString().equals("Index: 0 Data: 3\n");
     a1.append(a4);
+    
+   
     a1.insert(a5, 0);
     boolean t4 = a1.toString().equals("Index: 0 Data: 5\nIndex: 1 Data: 3\nIndex: 2 Data: 4\n");
     a1.insert(a6,10);
+     
     boolean t5 = a1.toString().equals("Index: 0 Data: 5\nIndex: 1 Data: 3\nIndex: 2 Data: 4\nIndex: 3 Data: 6\n");
+     
     a1.insert(a7,2);
     boolean t6 = a1.toString().equals("Index: 0 Data: 5\nIndex: 1 Data: 3\nIndex: 2 Data: 7\nIndex: 3 Data: 4\nIndex: 4 Data: 6\n");
 
     a1.remove(10);
+     
     boolean t7 = a1.toString().equals("Index: 0 Data: 5\nIndex: 1 Data: 3\nIndex: 2 Data: 7\nIndex: 3 Data: 4\nIndex: 4 Data: 6\n");
     a1.remove(3);
+     
     boolean t8 = a1.toString().equals("Index: 0 Data: 5\nIndex: 1 Data: 3\nIndex: 2 Data: 7\nIndex: 3 Data: 6\n");
     a1.remove(0);
     boolean t9 = a1.toString().equals("Index: 0 Data: 3\nIndex: 1 Data: 7\nIndex: 2 Data: 6\n");
@@ -114,13 +121,14 @@ public class LinkedListAutograder{
     Node b52 = new Node(2);
 
     a2.append(b1);
+    
     a2.append(b2);
     a2.append(b3);
     a2.append(b4);
     a2.append(b5);
     a2.append(b12);
     a2.append(b22);
-
+    
 
 
     boolean t1 = LinkedListUtil.length(a1)==0;
@@ -160,10 +168,15 @@ public class LinkedListAutograder{
     a4.append(b23);
     a4.append(b62);
     a4.append(b21);
+    
 
     LinkedList a5 = LinkedListUtil.reverse(a2);
+    
+
+    
 
     boolean t11 = LinkedListUtil.compare(a2, a3);
+    
     boolean t12 = LinkedListUtil.compare(a4, a5);
 
     if(!t1){
@@ -207,93 +220,94 @@ public class LinkedListAutograder{
     }
   }
 
-  public static void stackTests(){
-    Stack a1 = new Stack();
-    Node b1 = new Node(1);
-    Node b2 = new Node(2);
-    Node b3 = new Node(3);
-    Node b4 = new Node(1);
+   public static void stackTests(){
+Stack a1 = new Stack();
+     Node b1 = new Node(1);
+     Node b2 = new Node(2);
+     Node b3 = new Node(3);
+     Node b4 = new Node(1);
 
-    boolean t1 = a1.empty();
+     boolean t1 = a1.empty();
 
-    a1.push(b1);
-    a1.push(b2);
-    a1.push(b3);
+     a1.push(b1);
+     a1.push(b2);
+     a1.push(b3);
 
-    boolean t2 = a1.peek().getData()==3;
-    boolean t3 = a1.pop().getData()==3;
-    boolean t4 = !a1.empty();
+     boolean t2 = a1.peek().getData()==3;
+     boolean t3 = a1.pop().getData()==3;
+     boolean t4 = !a1.empty();
 
-    a1.push(b4);
+     a1.push(b4);
 
-    boolean t5 = a1.search(b1)==2;
-    boolean t6 = a1.search(b3)==-1;
+     boolean t5 = a1.search(b1)==2;
+     boolean t6 = a1.search(b3)==-1;
+     
 
-    if(!t1){
-      System.out.println("Failed Stack Test 1.");
-    }
-    if(!t2){
-      System.out.println("Failed Stack Test 2.");
-    }
-    if(!t3){
-      System.out.println("Failed Stack Test 3.");
-    }
-    if(!t4){
-      System.out.println("Failed Stack Test 4.");
-    }
-    if(!t5){
-      System.out.println("Failed Stack Test 5.");
-    }
-    if(!t6){
-      System.out.println("Failed Stack Test 6.");
-    }
-    if(t1&&t2&&t3&&t4&&t5&&t6){
-      System.out.println("Passed all Stack Tests.");
-    }
-  }
+     if(!t1){
+       System.out.println("Failed Stack Test 1.");
+     }
+     if(!t2){
+       System.out.println("Failed Stack Test 2.");
+     }
+     if(!t3){
+       System.out.println("Failed Stack Test 3.");
+     }
+     if(!t4){
+       System.out.println("Failed Stack Test 4.");
+     }
+     if(!t5){
+       System.out.println("Failed Stack Test 5.");
+     }
+     if(!t6){
+       System.out.println("Failed Stack Test 6.");
+     }
+     if(t1&&t2&&t3&&t4&&t5&&t6){
+       System.out.println("Passed all Stack Tests.");
+     }
+   }
 
-  public static void queueTests(){
-    Queue a1 = new Queue();
-    Node b1 = new Node(1);
-    Node b2 = new Node(2);
-    Node b3 = new Node(3);
-    Node b4 = new Node(3);
+   public static void queueTests(){
+     Queue a1 = new Queue();
+     Node b1 = new Node(1);
+     Node b2 = new Node(2);
+     Node b3 = new Node(3);
+     Node b4 = new Node(3);
 
-    boolean t1 = a1.empty();
+     boolean t1 = a1.empty();
 
-    a1.add(b1);
-    a1.add(b2);
-    a1.add(b3);
+     a1.add(b1);
+     a1.add(b2);
+     a1.add(b3);
 
-    boolean t2 = a1.peek().getData()==1;
-    boolean t3 = a1.remove().getData()==1;
-    boolean t4 = !a1.empty();
+     boolean t2 = a1.peek().getData()==1;
+     boolean t3 = a1.remove().getData()==1;
+     boolean t4 = !a1.empty();
 
-    a1.add(b4);
+     a1.add(b4);
 
-    boolean t5 = a1.search(b4)==2;
-    boolean t6 = a1.search(b1)==-1;
+     boolean t5 = a1.search(b4)==2;
+     boolean t6 = a1.search(b1)==-1;
 
-    if(!t1){
-      System.out.println("Failed Queue Test 1.");
-    }
-    if(!t2){
-      System.out.println("Failed Queue Test 2.");
-    }
-    if(!t3){
-      System.out.println("Failed Queue Test 3.");
-    }
-    if(!t4){
-      System.out.println("Failed Queue Test 4.");
-    }
-    if(!t5){
-      System.out.println("Failed Queue Test 5.");
-    }
-    if(!t6){
-      System.out.println("Failed Queue Test 6.");
-    }
-    if(t1&&t2&&t3&&t4&&t5&&t6){
-      System.out.println("Passed all Queue Tests.");
-    }
-  }
+     if(!t1){
+       System.out.println("Failed Queue Test 1.");
+     }
+     if(!t2){
+       System.out.println("Failed Queue Test 2.");
+     }
+     if(!t3){
+       System.out.println("Failed Queue Test 3.");
+     }
+     if(!t4){
+       System.out.println("Failed Queue Test 4.");
+     }
+     if(!t5){
+       System.out.println("Failed Queue Test 5.");
+     }
+     if(!t6){
+       System.out.println("Failed Queue Test 6.");
+     }
+     if(t1&&t2&&t3&&t4&&t5&&t6){
+       System.out.println("Passed all Queue Tests.");
+     }
+   }
 }
